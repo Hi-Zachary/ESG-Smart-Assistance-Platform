@@ -1,0 +1,35 @@
+{
+  "name": "esg-analysis-server",
+  "version": "1.0.0",
+  "description": "ESG智能分析平台后端服务",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "init-db": "node init-db.js",
+    "setup-db": "node setup-database.js",
+    "reset-db": "node setup-database.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "esg",
+    "analysis",
+    "deepseek",
+    "postgresql"
+  ],
+  "author": "ESG Analysis Team",
+  "license": "MIT"
+}
