@@ -5,8 +5,12 @@ export async function analyzeFile(file: File): Promise<any> {
     const formData = new FormData()
     formData.append('file', file)
 
+    const token = localStorage.getItem('token');
     const response = await fetch('/api/analyze/upload', {
       method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token}`
+      },
       body: formData
     })
 
@@ -36,7 +40,13 @@ export async function getAnalysisHistory(params: {
     if (params.search) queryParams.append('search', params.search)
     if (params.status) queryParams.append('status', params.status)
 
-    const response = await fetch(`/api/history?${queryParams}`)
+    const token = localStorage.getItem('token');
+    const response = await fetch(`/api/history?${queryParams}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
+    })
     
     if (!response.ok) {
       throw new Error(`获取历史记录失败: ${response.status}`)
@@ -68,8 +78,13 @@ export async function getAnalysisById(id: string): Promise<any> {
 // 删除分析结果
 export async function deleteAnalysis(id: string): Promise<void> {
   try {
+    const token = localStorage.getItem('token');
     const response = await fetch(`/api/analysis/${id}`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
     })
     
     if (!response.ok) {
@@ -84,9 +99,11 @@ export async function deleteAnalysis(id: string): Promise<void> {
 // 合规检测
 export async function checkCompliance(analysisId: string): Promise<any> {
   try {
+    const token = localStorage.getItem('token');
     const response = await fetch('/api/compliance/check', {
       method: 'POST',
       headers: {
+        'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ analysisId })
@@ -106,7 +123,13 @@ export async function checkCompliance(analysisId: string): Promise<any> {
 // 获取合规规则
 export async function getComplianceRules(): Promise<any> {
   try {
-    const response = await fetch('/api/compliance/rules')
+    const token = localStorage.getItem('token');
+    const response = await fetch('/api/compliance/rules', {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
+    })
     
     if (!response.ok) {
       throw new Error(`获取合规规则失败: ${response.status}`)
@@ -122,9 +145,11 @@ export async function getComplianceRules(): Promise<any> {
 // 更新合规规则
 export async function updateComplianceRule(id: string, updates: any): Promise<any> {
   try {
+    const token = localStorage.getItem('token');
     const response = await fetch(`/api/compliance/rules/${id}`, {
       method: 'PUT',
       headers: {
+        'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(updates)

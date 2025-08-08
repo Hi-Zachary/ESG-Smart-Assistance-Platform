@@ -125,4 +125,21 @@ const Toaster = () => {
   )
 }
 
+// useToast hook
+export const useToast = () => {
+  return {
+    toast: (options: {
+      title: string
+      description?: string
+      variant?: "success" | "error" | "warning" | "info"
+    }) => {
+      notificationManager.add({
+        title: options.title,
+        description: options.description,
+        type: options.variant || "info"
+      })
+    }
+  }
+}
+
 export { Toaster, Toast, ToastTitle, ToastDescription }
