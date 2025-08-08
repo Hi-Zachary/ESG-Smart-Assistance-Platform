@@ -15,7 +15,7 @@ echo 正在启动前端服务器...
 start "ESG Frontend Server" cmd /k "chcp 65001 && npm run dev"
 
 echo.
-echo ESG智能分析平台启动完成！
+echo ESG智能分析平台启动完成!
 echo 后端服务器: http://localhost:3001
 echo 前端服务器: http://localhost:5173
 echo.

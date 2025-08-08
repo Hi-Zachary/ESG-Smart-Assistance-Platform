@@ -6,8 +6,11 @@ const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const { analyzeTextWithDeepSeek } = require('./deepseek-api');
 const { db, initDatabase } = require('./database');
+const { router: authRoutes, authenticateToken } = require('./auth-routes');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -22,6 +25,9 @@ initDatabase().catch(error => {
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
+
+// 认证路由
+app.use('/api/auth', authRoutes);
 
 // 文件上传配置
 const storage = multer.diskStorage({
@@ -64,7 +70,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // ESG文本分析 - 使用DeepSeek API
-app.post('/api/analyze', async (req, res) => {
+app.post('/api/analyze', authenticateToken, async (req, res) => {
   console.log('🔍 API /analyze 被调用');
   console.log('请求体:', req.body);
   console.log('请求头:', req.headers);
@@ -98,9 +104,10 @@ app.post('/api/analyze', async (req, res) => {
       source: result.source
     });
     
-    // 保存到PostgreSQL数据库
+    // 保存到PostgreSQL数据库，关联当前用户ID
     console.log('💾 准备保存到数据库...');
     const savedResult = await db.saveAnalysisResult({
+      userId: req.user.id, // 添加用户ID关联
       inputText: text,
       fileName: options.fileName || null,
       entities: result.entities,
@@ -146,7 +153,7 @@ app.post('/api/analyze', async (req, res) => {
 });
 
 // 文件上传分析
-app.post('/api/analyze/upload', upload.single('file'), async (req, res) => {
+app.post('/api/analyze/upload', authenticateToken, upload.single('file'), async (req, res) => {
   try {
     if (!req.file) {
       return res.status(400).json({ error: '请上传文件' });
@@ -178,8 +185,9 @@ app.post('/api/analyze/upload', upload.single('file'), async (req, res) => {
     // 使用DeepSeek API分析文本
     const result = await analyzeTextWithDeepSeek(text, { fileName: req.file.originalname });
     
-    // 保存到PostgreSQL数据库
+    // 保存到PostgreSQL数据库，关联当前用户ID
     const savedResult = await db.saveAnalysisResult({
+      userId: req.user.id, // 添加用户ID关联
       inputText: text,
       fileName: req.file.originalname,
       entities: result.entities,
@@ -205,13 +213,16 @@ app.post('/api/analyze/upload', upload.single('file'), async (req, res) => {
 });
 
 // 获取分析历史
-app.get('/api/history', async (req, res) => {
+app.get('/api/history', authenticateToken, async (req, res) => {
   try {
     const { page = 1, limit = 10, search = '', status = 'all' } = req.query;
+    const userId = req.user.id; // 获取当前用户ID
     
-    console.log('📋 获取分析历史，参数:', { page, limit, search, status });
+    console.log('📋 获取分析历史，参数:', { userId, page, limit, search, status });
     
-    const results = await db.getAnalysisResults(
+    // 修改数据库查询函数，添加用户ID过滤
+    const results = await db.getAnalysisResultsByUserId(
+      userId,
       parseInt(page),
       parseInt(limit),
       search,
@@ -227,13 +238,21 @@ app.get('/api/history', async (req, res) => {
 });
 
 // 获取单个分析结果
-app.get('/api/analysis/:id', async (req, res) => {
+app.get('/api/analysis/:id', authenticateToken, async (req, res) => {
   try {
     const { id } = req.params;
+    const userId = req.user.id; // 获取当前用户ID
+    
+    // 获取分析结果
     const result = await db.getAnalysisById(id);
     
     if (!result) {
       return res.status(404).json({ error: '分析结果不存在' });
+    }
+    
+    // 验证该分析结果是否属于当前用户
+    if (result.user_id !== userId) {
+      return res.status(403).json({ error: '无权访问此分析结果' });
     }
     
     res.json(result);
@@ -244,13 +263,27 @@ app.get('/api/analysis/:id', async (req, res) => {
 });
 
 // 删除分析结果
-app.delete('/api/analysis/:id', async (req, res) => {
+app.delete('/api/analysis/:id', authenticateToken, async (req, res) => {
   try {
     const { id } = req.params;
+    const userId = req.user.id; // 获取当前用户ID
+    
+    // 获取分析结果
+    const result = await db.getAnalysisById(id);
+    
+    if (!result) {
+      return res.status(404).json({ error: '分析结果不存在' });
+    }
+    
+    // 验证该分析结果是否属于当前用户
+    if (result.user_id !== userId) {
+      return res.status(403).json({ error: '无权删除此分析结果' });
+    }
+    
     const success = await db.deleteAnalysisResult(id);
     
     if (!success) {
-      return res.status(404).json({ error: '分析结果不存在' });
+      return res.status(500).json({ error: '删除分析结果失败' });
     }
     
     res.json({ message: '删除成功' });
@@ -330,15 +363,17 @@ app.put('/api/compliance/rules/:id', async (req, res) => {
   }
 });
 
-// 统计数据
-app.get('/api/stats', async (req, res) => {
+// 获取仪表盘统计数据 - 按用户过滤
+app.get('/api/dashboard/stats', authenticateToken, async (req, res) => {
   try {
-    console.log('📊 获取统计数据...');
-    const stats = await db.getStats();
-    console.log('✅ 统计数据获取成功:', stats);
+    const userId = req.user.id;
+    console.log('📊 获取用户仪表盘统计数据，用户ID:', userId);
+    
+    const stats = await db.getUserStats(userId);
+    console.log('✅ 用户统计数据获取成功:', stats);
     res.json(stats);
   } catch (error) {
-    console.error('❌ 获取统计数据错误:', error);
+    console.error('❌ 获取用户统计数据错误:', error);
     res.status(500).json({ 
       error: '获取统计数据失败',
       details: error.message 
@@ -346,18 +381,35 @@ app.get('/api/stats', async (req, res) => {
   }
 });
 
-// 获取风险预警数据
-app.get('/api/risk-alerts', async (req, res) => {
+// 统计数据 - 保留全局统计（管理员用）
+app.get('/api/stats', async (req, res) => {
+  try {
+    console.log('📊 获取全局统计数据...');
+    const stats = await db.getStats();
+    console.log('✅ 全局统计数据获取成功:', stats);
+    res.json(stats);
+  } catch (error) {
+    console.error('❌ 获取全局统计数据错误:', error);
+    res.status(500).json({ 
+      error: '获取统计数据失败',
+      details: error.message 
+    });
+  }
+});
+
+// 获取风险预警数据 - 按用户过滤
+app.get('/api/risk-alerts', authenticateToken, async (req, res) => {
   try {
     const { limit = 10 } = req.query;
-    console.log('⚠️ 获取风险预警数据，限制数量:', limit);
+    const userId = req.user.id;
+    console.log('⚠️ 获取用户风险预警数据，用户ID:', userId, '限制数量:', limit);
     
-    const riskAlerts = await db.getRiskAlerts(parseInt(limit));
-    console.log('✅ 风险预警数据获取成功，数量:', riskAlerts.length);
+    const riskAlerts = await db.getUserRiskAlerts(userId, parseInt(limit));
+    console.log('✅ 用户风险预警数据获取成功，数量:', riskAlerts.length);
     
     res.json(riskAlerts);
   } catch (error) {
-    console.error('❌ 获取风险预警数据错误:', error);
+    console.error('❌ 获取用户风险预警数据错误:', error);
     res.status(500).json({ 
       error: '获取风险预警数据失败',
       details: error.message 

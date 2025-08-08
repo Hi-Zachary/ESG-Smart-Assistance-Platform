@@ -12,6 +12,7 @@ ESG 智能分析平台是一个功能强大的全栈Web应用，旨在利用人�
 
 ## ✨ 主要功能
 
+- **用户认证系统**：支持用户注册、登录，基于JWT的安全认证机制，确保数据安全和用户隐私。
 - **智能文本分析**：支持直接输入文本，利用DeepSeek AI大模型进行全面的ESG分析。
 - **文件上传分析**：支持上传多种格式文件（.txt, .pdf, .docx），系统自动提取文本并进行分析。
 - **数据可视化仪表板**：以图表和卡片形式直观展示关键统计数据，如平均ESG评分、合规率、风险预警数量等。
@@ -106,6 +107,9 @@ DB_PASSWORD=your-database-password # 替换为您的PostgreSQL密码
 # DeepSeek API配置
 DEEPSEEK_API_KEY=your-deepseek-api-key # 替换为您自己的DeepSeek API密钥
 
+# JWT配置
+JWT_SECRET=your-jwt-secret-key # 替换为您自己的JWT密钥（建议使用复杂的随机字符串）
+
 # 服务器配置
 PORT=3001
 NODE_ENV=development
@@ -117,6 +121,11 @@ DEEPSEEK_MAX_RETRIES=2
 ```
 
 **重要**: 首次启动后端服务器时，系统会自动执行数据库初始化脚本，创建所需的表和默认数据。
+
+**安全提醒**: 
+- 请务必修改 `JWT_SECRET` 为复杂的随机字符串，不要使用默认值
+- 生产环境中请使用强密码保护数据库
+- 建议定期备份数据库数据
 
 ### 4. 运行项目
 
@@ -155,6 +164,49 @@ npm run dev
 当所有服务都成功启动后，在浏览器中打开以下地址即可访问平台：
 [http://localhost:5173](http://localhost:5173)
 
+## 🔐 用户认证系统
+
+本平台实现了完整的用户认证系统，确保数据安全和用户隐私。
+
+### 认证功能
+
+- **用户注册**：新用户可以通过用户名、邮箱和密码创建账户
+- **用户登录**：已注册用户使用用户名和密码登录系统
+- **JWT认证**：采用JSON Web Token进行安全的身份验证
+- **密码加密**：使用bcryptjs对用户密码进行哈希加密存储
+- **路由保护**：未登录用户无法访问分析功能，自动重定向到登录页面
+
+### 数据库表结构
+
+系统会自动创建以下用户相关数据表：
+
+```sql
+-- 用户表
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(50) UNIQUE NOT NULL,
+  email VARCHAR(100) UNIQUE NOT NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  role VARCHAR(20) DEFAULT 'user',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+### 使用流程
+
+1. **首次访问**：访问 [http://localhost:5173](http://localhost:5173) 会自动跳转到登录页面
+2. **用户注册**：点击"注册新账户"链接，填写用户名、邮箱和密码完成注册
+3. **用户登录**：使用注册的用户名和密码登录系统
+4. **开始使用**：登录成功后即可使用所有ESG分析功能
+
+### 安全特性
+
+- **密码强度**：建议使用包含字母、数字和特殊字符的强密码
+- **Token过期**：JWT Token有效期为1小时，过期后需要重新登录
+- **数据隔离**：每个用户只能查看和管理自己的分析记录
+- **输入验证**：对所有用户输入进行严格的验证和过滤
+
 ## 📁 项目结构
 
 ```
@@ -162,16 +214,23 @@ npm run dev
 ├── server/                # 后端代码
 │   ├── .env.example       # 环境变量示例文件
 │   ├── app.js             # Express应用主文件
+│   ├── auth-routes.js     # 用户认证路由（注册、登录、JWT验证）
 │   ├── database.js        # 数据库连接与操作
 │   ├── deepseek-api.js    # DeepSeek API封装
 │   └── package.json       # 后端依赖
 │
 ├── src/                   # 前端代码 (React)
 │   ├── components/        # UI组件
+│   │   ├── protected-route.tsx  # 路由保护组件
+│   │   └── sidebar.tsx    # 侧边栏组件（含登出功能）
 │   ├── lib/               # 工具函数和API封装
+│   │   └── auth-context.tsx     # 认证上下文管理
 │   ├── pages/             # 页面组件
+│   │   ├── login.tsx      # 登录页面
+│   │   ├── register.tsx   # 注册页面
+│   │   └── ...            # 其他功能页面
 │   ├── main.tsx           # 前端入口文件
-│   └── App.tsx            # 应用根组件
+│   └── App.tsx            # 应用根组件（含路由配置）
 │
 ├── public/                # 静态资源
 ├── .gitignore             # Git忽略配置

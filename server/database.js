@@ -128,6 +128,11 @@ const db = {
     return result.rows[0];
   },
 
+  async getUserByUsernameOrEmail(username, email) {
+    const result = await pool.query('SELECT * FROM users WHERE username = $1 OR email = $2', [username, email]);
+    return result.rows[0];
+  },
+
   // ESG分析结果相关操作
   async saveAnalysisResult(data) {
     try {
@@ -198,10 +203,50 @@ const db = {
     }
   },
 
+  // 获取所有分析结果（管理员使用）
   async getAnalysisResults(page = 1, limit = 10, search = '', status = 'all') {
     let whereClause = 'WHERE 1=1';
     const params = [];
     let paramIndex = 1;
+
+    if (search) {
+      whereClause += ` AND (input_text ILIKE $${paramIndex} OR file_name ILIKE $${paramIndex + 1})`;
+      params.push(`%${search}%`, `%${search}%`);
+      paramIndex += 2;
+    }
+
+    if (status !== 'all') {
+      whereClause += ` AND status = $${paramIndex}`;
+      params.push(status);
+      paramIndex++;
+    }
+
+    const offset = (page - 1) * limit;
+    
+    const countResult = await pool.query(`SELECT COUNT(*) FROM analysis_results ${whereClause}`, params);
+    const total = parseInt(countResult.rows[0].count);
+
+    const dataResult = await pool.query(`
+      SELECT * FROM analysis_results 
+      ${whereClause}
+      ORDER BY created_at DESC 
+      LIMIT $${paramIndex} OFFSET $${paramIndex + 1}
+    `, [...params, limit, offset]);
+
+    return {
+      results: dataResult.rows,
+      total,
+      page,
+      limit,
+      totalPages: Math.ceil(total / limit)
+    };
+  },
+
+  // 获取特定用户的分析结果
+  async getAnalysisResultsByUserId(userId, page = 1, limit = 10, search = '', status = 'all') {
+    let whereClause = 'WHERE user_id = $1';
+    const params = [userId];
+    let paramIndex = 2;
 
     if (search) {
       whereClause += ` AND (input_text ILIKE $${paramIndex} OR file_name ILIKE $${paramIndex + 1})`;
@@ -289,7 +334,43 @@ const db = {
     return result.rows[0];
   },
 
-  // 统计数据
+  // 获取特定用户的统计数据
+  async getUserStats(userId) {
+    const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD格式
+    
+    const todayAnalysisResult = await pool.query(
+      "SELECT COUNT(*) FROM analysis_results WHERE user_id = $1 AND DATE(created_at) = $2", 
+      [userId, today]
+    );
+    
+    const avgScoreResult = await pool.query(`
+      SELECT AVG((esg_scores->>'overall')::numeric) as avg_score 
+      FROM analysis_results 
+      WHERE user_id = $1 AND esg_scores->>'overall' IS NOT NULL AND (esg_scores->>'overall')::numeric > 0
+    `, [userId]);
+    
+    const totalAnalysisResult = await pool.query('SELECT COUNT(*) FROM analysis_results WHERE user_id = $1', [userId]);
+    
+    // 修复风险预警统计逻辑 - 统计实际的风险项数量而不是有风险的分析数量
+    const riskAlertsResult = await pool.query(`
+      SELECT COALESCE(SUM(jsonb_array_length(COALESCE(risks, '[]'::jsonb))), 0) as risk_count
+      FROM analysis_results 
+      WHERE user_id = $1 AND jsonb_array_length(COALESCE(risks, '[]'::jsonb)) > 0
+    `, [userId]);
+
+    const totalCount = parseInt(totalAnalysisResult.rows[0].count);
+    const avgScore = parseFloat(avgScoreResult.rows[0].avg_score) || null;
+    
+    return {
+      todayAnalysis: parseInt(todayAnalysisResult.rows[0].count),
+      avgEsgScore: avgScore ? Number(avgScore.toFixed(1)) : null,
+      complianceRate: avgScore ? Math.round(avgScore * 10) : null,
+      riskAlerts: parseInt(riskAlertsResult.rows[0].risk_count) || 0,
+      totalAnalysis: totalCount
+    };
+  },
+
+  // 统计数据 - 全局统计（管理员用）
   async getStats() {
     const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD格式
     
@@ -307,7 +388,8 @@ const db = {
     const totalAnalysisResult = await pool.query('SELECT COUNT(*) FROM analysis_results');
     
     const riskAlertsResult = await pool.query(`
-      SELECT COUNT(*) FROM analysis_results 
+      SELECT COALESCE(SUM(jsonb_array_length(COALESCE(risks, '[]'::jsonb))), 0) as risk_count
+      FROM analysis_results 
       WHERE jsonb_array_length(COALESCE(risks, '[]'::jsonb)) > 0
     `);
 
@@ -318,12 +400,12 @@ const db = {
       todayAnalysis: parseInt(todayAnalysisResult.rows[0].count),
       avgEsgScore: avgScore ? Number(avgScore.toFixed(1)) : null,
       complianceRate: avgScore ? Math.round(avgScore * 10) : null,
-      riskAlerts: parseInt(riskAlertsResult.rows[0].count),
+      riskAlerts: parseInt(riskAlertsResult.rows[0].risk_count) || 0,
       totalAnalysis: totalCount
     };
   },
 
-  // 获取风险预警数据
+  // 获取风险预警数据 - 全局（管理员用）
   async getRiskAlerts(limit = 10) {
     try {
       const result = await pool.query(`
@@ -379,6 +461,77 @@ const db = {
       return riskAlerts.slice(0, limit);
     } catch (error) {
       console.error('获取风险预警数据失败:', error);
+      return [];
+    }
+  },
+
+  // 获取特定用户的风险预警数据
+  async getUserRiskAlerts(userId, limit = 10) {
+    try {
+      console.log('🔍 查询用户风险预警数据，用户ID:', userId, '限制数量:', limit);
+      
+      const result = await pool.query(`
+        SELECT 
+          ar.id,
+          ar.created_at,
+          ar.entities,
+          ar.risks,
+          ar.esg_scores,
+          ar.user_id
+        FROM analysis_results ar
+        WHERE ar.user_id = $1 
+          AND ar.user_id IS NOT NULL 
+          AND jsonb_array_length(COALESCE(ar.risks, '[]'::jsonb)) > 0
+        ORDER BY ar.created_at DESC
+        LIMIT $2
+      `, [userId, limit]);
+
+      console.log('📊 查询结果:', {
+        userId: userId,
+        foundRecords: result.rows.length,
+        recordIds: result.rows.map(r => ({ id: r.id, user_id: r.user_id }))
+      });
+
+      const riskAlerts = [];
+      
+      for (const row of result.rows) {
+        const entities = row.entities || [];
+        const risks = row.risks || [];
+        const esgScores = row.esg_scores || {};
+        
+        // 获取公司名称
+        const companyName = entities.find(e => e.type === '公司名称')?.value ||
+                           entities.find(e => e.type === 'company')?.value ||
+                           entities.find(e => e.type === 'organization')?.value ||
+                           '未知公司';
+
+        // 处理每个风险项
+        for (const risk of risks) {
+          // 根据ESG评分和风险描述确定严重程度
+          let severity = 'low';
+          const overallScore = esgScores.overall || 0;
+          
+          if (overallScore < 5 || risk.level === 'high') {
+            severity = 'high';
+          } else if (overallScore < 7 || risk.level === 'medium') {
+            severity = 'medium';
+          }
+
+          riskAlerts.push({
+            id: `${row.id}_${riskAlerts.length}`,
+            title: risk.title || risk.description?.substring(0, 20) + '...' || '风险预警',
+            company: companyName,
+            severity: severity,
+            description: risk.description || '需要关注的ESG风险项',
+            analysisDate: new Date(row.created_at).toLocaleDateString('zh-CN'),
+            esgScore: overallScore
+          });
+        }
+      }
+
+      return riskAlerts.slice(0, limit);
+    } catch (error) {
+      console.error('获取用户风险预警数据失败:', error);
       return [];
     }
   }
