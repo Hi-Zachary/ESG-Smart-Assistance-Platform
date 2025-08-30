@@ -11,8 +11,8 @@ import DataVisualization from '@/pages/data-visualization'
 import History from '@/pages/history'
 import Login from '@/pages/login'
 import Register from '@/pages/register'
-import SettingsPage from '@/pages/settings'
 import HelpPage from '@/pages/help'
+import SettingsPage from '@/pages/settings'
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true)
@@ -39,6 +39,8 @@ function App() {
                         <Route path="/compliance" element={<ComplianceCheck />} />
                         <Route path="/visualization" element={<DataVisualization />} />
                         <Route path="/history" element={<History />} />
+                        <Route path="/settings" element={<SettingsPage />} />
+                        <Route path="/help" element={<HelpPage />} />
                       </Routes>
                     </main>
                   </div>

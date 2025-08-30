@@ -3,11 +3,9 @@ import {
     Settings as SettingsIcon,
     User,
     Bell,
-    Lock,
     Database,
     Moon,
     Sun,
-    LogOut,
     Save,
     X
 } from 'lucide-react'
@@ -21,11 +19,9 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { useNavigate } from 'react-router-dom'
 import { notify } from '@/lib/notifications'
 
 export default function SettingsPage() {
-    const navigate = useNavigate()
     const [settings, setSettings] = useState({
         profile: {
             name: '',
@@ -180,7 +176,7 @@ export default function SettingsPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
                                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                                        姓名
+                                        用户名
                                     </label>
                                     <Input
                                         id="name"

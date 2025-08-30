@@ -628,12 +628,9 @@ export default function ComplianceCheck() {
     <div className="p-6 space-y-6">
       {/* 页面标题 */}
       <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-3">
-          <Shield className="h-8 w-8 text-blue-600" />
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900">ESG合规检测</h1>
-            <p className="text-gray-600 mt-1">根据预定义规则检测企业ESG合规状态</p>
-          </div>
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">ESG合规检测</h1>
+          <p className="text-gray-600 mt-1">根据预定义规则检测企业ESG合规状态</p>
         </div>
         <div className="flex space-x-2">
           <Button variant="outline" onClick={loadAnalysisHistory}>
@@ -1214,6 +1211,9 @@ export default function ComplianceCheck() {
                   <Badge variant={rule.category === 'environmental' ? 'default' : rule.category === 'social' ? 'secondary' : 'outline'}>
                     {rule.category === 'environmental' ? '环境' : rule.category === 'social' ? '社会' : '治理'}
                   </Badge>
+                  <Button variant="outline" size="sm">
+                    <Settings className="h-4 w-4" />
+                  </Button>
                 </div>
               </div>
             ))}

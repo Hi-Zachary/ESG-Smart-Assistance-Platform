@@ -1,146 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\ESG-Smart-Assistance-Platform\\",
+  "WorkspaceRootPath": "E:\\Projects\\ESG-Platfrom\\ESG-Smart-Assistance-Platform\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\components\\sidebar.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\sidebar.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\pages\\settings.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\pages\\settings.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\pages\\login.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Projects\\ESG-Platfrom\\ESG-Smart-Assistance-Platform\\src\\pages\\login.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\pages\\login.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\server\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:server\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Projects\\ESG-Platfrom\\ESG-Smart-Assistance-Platform\\vite.config.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:vite.config.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\pages\\compliance-check.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\pages\\compliance-check.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\pages\\dashboard.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\pages\\dashboard.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\pages\\history.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\pages\\history.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\server\\database.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:server\\database.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\pages\\help.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\pages\\help.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\pages\\data-visualization.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\pages\\data-visualization.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\pages\\text-analysis.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\pages\\text-analysis.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\App.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\App.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\lib\\api-extended.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\lib\\api-extended.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\server\\package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:server\\package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\lib\\storage.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\lib\\storage.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\lib\\api.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\lib\\api.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\globals.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\globals.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\tailwind.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:tailwind.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\tabs.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\ui\\tabs.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\components\\theme-provider.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\theme-provider.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\main.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\main.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\lib\\utils.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\lib\\utils.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\lib\\notifications.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\lib\\notifications.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\lib\\export.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\lib\\export.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\components\\analysis-result-modal.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\analysis-result-modal.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\start.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:start.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\checkbox.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\ui\\checkbox.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\card.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\ui\\card.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\dropdown-menu.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\ui\\dropdown-menu.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\toaster.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\ui\\toaster.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\select.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\ui\\select.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\button.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\ui\\button.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Projects\\ESG-Platfrom\\ESG-Smart-Assistance-Platform\\src\\pages\\settings.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\pages\\settings.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -150,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -158,427 +30,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "login.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\pages\\login.tsx",
+              "DocumentMoniker": "E:\\Projects\\ESG-Platfrom\\ESG-Smart-Assistance-Platform\\src\\pages\\login.tsx",
               "RelativeDocumentMoniker": "src\\pages\\login.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\pages\\login.tsx",
+              "ToolTip": "E:\\Projects\\ESG-Platfrom\\ESG-Smart-Assistance-Platform\\src\\pages\\login.tsx",
               "RelativeToolTip": "src\\pages\\login.tsx",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T10:54:49.821Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "app.js",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\server\\app.js",
-              "RelativeDocumentMoniker": "server\\app.js",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\server\\app.js",
-              "RelativeToolTip": "server\\app.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-08-30T10:12:46.846Z",
+              "WhenOpened": "2025-08-30T11:51:57.14Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "vite.config.ts",
+              "DocumentMoniker": "E:\\Projects\\ESG-Platfrom\\ESG-Smart-Assistance-Platform\\vite.config.ts",
+              "RelativeDocumentMoniker": "vite.config.ts",
+              "ToolTip": "E:\\Projects\\ESG-Platfrom\\ESG-Smart-Assistance-Platform\\vite.config.ts",
+              "RelativeToolTip": "vite.config.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-08-30T11:51:36.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "settings.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\pages\\settings.tsx",
+              "DocumentMoniker": "E:\\Projects\\ESG-Platfrom\\ESG-Smart-Assistance-Platform\\src\\pages\\settings.tsx",
               "RelativeDocumentMoniker": "src\\pages\\settings.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\pages\\settings.tsx",
+              "ToolTip": "E:\\Projects\\ESG-Platfrom\\ESG-Smart-Assistance-Platform\\src\\pages\\settings.tsx",
               "RelativeToolTip": "src\\pages\\settings.tsx",
-              "ViewState": "AgIAADUAAAAAAAAAAAAAAEcBAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAKUAAAAAAAAAAADwv7MAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T02:14:47.024Z",
+              "WhenOpened": "2025-08-30T11:50:56.91Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "compliance-check.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\pages\\compliance-check.tsx",
-              "RelativeDocumentMoniker": "src\\pages\\compliance-check.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\pages\\compliance-check.tsx",
-              "RelativeToolTip": "src\\pages\\compliance-check.tsx",
-              "ViewState": "AgIAAGcCAAAAAAAAAAAAAHECAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T01:44:54.446Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "dashboard.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\pages\\dashboard.tsx",
-              "RelativeDocumentMoniker": "src\\pages\\dashboard.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\pages\\dashboard.tsx",
-              "RelativeToolTip": "src\\pages\\dashboard.tsx",
-              "ViewState": "AgIAAF8AAAAAAAAAAAArwHAAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T01:19:32.435Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "sidebar.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\sidebar.tsx",
-              "RelativeDocumentMoniker": "src\\components\\sidebar.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\sidebar.tsx",
-              "RelativeToolTip": "src\\components\\sidebar.tsx",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAQwFEAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T01:14:34.605Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "text-analysis.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\pages\\text-analysis.tsx",
-              "RelativeDocumentMoniker": "src\\pages\\text-analysis.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\pages\\text-analysis.tsx",
-              "RelativeToolTip": "src\\pages\\text-analysis.tsx",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAAwIoAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T02:16:56.463Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "help.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\pages\\help.tsx",
-              "RelativeDocumentMoniker": "src\\pages\\help.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\pages\\help.tsx",
-              "RelativeToolTip": "src\\pages\\help.tsx",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T03:29:07.692Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "history.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\pages\\history.tsx",
-              "RelativeDocumentMoniker": "src\\pages\\history.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\pages\\history.tsx",
-              "RelativeToolTip": "src\\pages\\history.tsx",
-              "ViewState": "AgIAAIsBAAAAAAAAAAAAwJoBAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T02:16:52.649Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "database.js",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\server\\database.js",
-              "RelativeDocumentMoniker": "server\\database.js",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\server\\database.js",
-              "RelativeToolTip": "server\\database.js",
-              "ViewState": "AgIAAG4BAAAAAAAAAAAAAH4BAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-08-30T07:06:30.545Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "data-visualization.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\pages\\data-visualization.tsx",
-              "RelativeDocumentMoniker": "src\\pages\\data-visualization.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\pages\\data-visualization.tsx",
-              "RelativeToolTip": "src\\pages\\data-visualization.tsx",
-              "ViewState": "AgIAADQBAAAAAAAAAAAAAEIBAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T01:39:53.93Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "App.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\App.tsx",
-              "RelativeDocumentMoniker": "src\\App.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\App.tsx",
-              "RelativeToolTip": "src\\App.tsx",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T03:00:01.377Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "api-extended.ts",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\lib\\api-extended.ts",
-              "RelativeDocumentMoniker": "src\\lib\\api-extended.ts",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\lib\\api-extended.ts",
-              "RelativeToolTip": "src\\lib\\api-extended.ts",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwB4AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T01:18:29.145Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "package-lock.json",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\server\\package-lock.json",
-              "RelativeDocumentMoniker": "server\\package-lock.json",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\server\\package-lock.json",
-              "RelativeToolTip": "server\\package-lock.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-30T07:12:13.941Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "theme-provider.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\theme-provider.tsx",
-              "RelativeDocumentMoniker": "src\\components\\theme-provider.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\theme-provider.tsx",
-              "RelativeToolTip": "src\\components\\theme-provider.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T03:11:53.079Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "tabs.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\tabs.tsx",
-              "RelativeDocumentMoniker": "src\\components\\ui\\tabs.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\tabs.tsx",
-              "RelativeToolTip": "src\\components\\ui\\tabs.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T04:01:26.57Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "tailwind.config.js",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\tailwind.config.js",
-              "RelativeDocumentMoniker": "tailwind.config.js",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\tailwind.config.js",
-              "RelativeToolTip": "tailwind.config.js",
-              "ViewState": "AgIAADQAAAAAAAAAAAAswD4AAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-08-30T04:04:20.023Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "index.html",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\index.html",
-              "RelativeDocumentMoniker": "index.html",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\index.html",
-              "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwwAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-08-30T04:07:56.083Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "package-lock.json",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\package-lock.json",
-              "RelativeDocumentMoniker": "package-lock.json",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\package-lock.json",
-              "RelativeToolTip": "package-lock.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-30T04:08:31.277Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "export.ts",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\lib\\export.ts",
-              "RelativeDocumentMoniker": "src\\lib\\export.ts",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\lib\\export.ts",
-              "RelativeToolTip": "src\\lib\\export.ts",
-              "ViewState": "AgIAAF0AAAAAAAAAAADwvxEAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T03:11:20.912Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "notifications.ts",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\lib\\notifications.ts",
-              "RelativeDocumentMoniker": "src\\lib\\notifications.ts",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\lib\\notifications.ts",
-              "RelativeToolTip": "src\\lib\\notifications.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T03:11:18.831Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "storage.ts",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\lib\\storage.ts",
-              "RelativeDocumentMoniker": "src\\lib\\storage.ts",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\lib\\storage.ts",
-              "RelativeToolTip": "src\\lib\\storage.ts",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABQAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T03:11:17.779Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "utils.ts",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\lib\\utils.ts",
-              "RelativeDocumentMoniker": "src\\lib\\utils.ts",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\lib\\utils.ts",
-              "RelativeToolTip": "src\\lib\\utils.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T03:11:14.388Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "package.json",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\package.json",
-              "RelativeDocumentMoniker": "package.json",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\package.json",
-              "RelativeToolTip": "package.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-30T03:10:49.914Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "start.bat",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\start.bat",
-              "RelativeDocumentMoniker": "start.bat",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\start.bat",
-              "RelativeToolTip": "start.bat",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAhAAAAAAAAAA==",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG7SURBVDhPzZTNSxtBHEBfPGipJ\u002B2iGFBjzJqu4nda0EO99CaCeBOEQlsotCCUakMO6sWrBz8QlZaWInjxXyjtQbNKwCqYUGObRKIosfFSKTazcXsQQWZXJOqhD4aB37x5cxu4TUzTlEc3xhHwD8bBdMkH18ORyLtOrLOr23YH00XAP2BmMplbWQH/gJl34WELuweHfF5eYz91JB9dim3wz8lf9G8Rfib2\u002BH18TGQ7xnJog1T66rBtMByNkzpMc3qaxdegkc0a7Ozuk9w7kFULtsEmzYNhGHhc5VRVOPG6KzEMQb2myqoF22A4GkOIDOGtH2zHdtiIRBFC8DUYklULtsGyUoWyEgUhBF\u002BWVskaBiVKEW2tjbJqwTZYqhTT0dZKg6ZypyCfWq\u002Bbx4/aiSeTvPIPsb4Z5lc6LV\u002BDy4LnVJY76e3pxFtdxeS7j8x8mKeuxsP49Cxz7z/JOlwVvEitWk1djYeXz55Qr91HVd2yArkEI9\u002B3WA2FGJuYIqivENR1WYFcgk/7eul/8RxdX\u002BHt635GR4ZlBXIJKveK8bU0s7gwz8MHPgoL78oKnH1fb\u002BLgyPnHscdMyJP/j39Wh9oGPXeiTgAAAABJRU5ErkJggg==",
-              "WhenOpened": "2025-08-30T03:06:33.833Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "main.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\main.tsx",
-              "RelativeDocumentMoniker": "src\\main.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\main.tsx",
-              "RelativeToolTip": "src\\main.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T02:59:53.048Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "checkbox.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\checkbox.tsx",
-              "RelativeDocumentMoniker": "src\\components\\ui\\checkbox.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\checkbox.tsx",
-              "RelativeToolTip": "src\\components\\ui\\checkbox.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T01:53:38.096Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "dropdown-menu.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\dropdown-menu.tsx",
-              "RelativeDocumentMoniker": "src\\components\\ui\\dropdown-menu.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\dropdown-menu.tsx",
-              "RelativeToolTip": "src\\components\\ui\\dropdown-menu.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T01:32:41.512Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "toaster.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\toaster.tsx",
-              "RelativeDocumentMoniker": "src\\components\\ui\\toaster.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\toaster.tsx",
-              "RelativeToolTip": "src\\components\\ui\\toaster.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T01:31:45.188Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "select.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\select.tsx",
-              "RelativeDocumentMoniker": "src\\components\\ui\\select.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\select.tsx",
-              "RelativeToolTip": "src\\components\\ui\\select.tsx",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAowIQAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T01:22:58.856Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "button.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\button.tsx",
-              "RelativeDocumentMoniker": "src\\components\\ui\\button.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\button.tsx",
-              "RelativeToolTip": "src\\components\\ui\\button.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T01:21:12.765Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "globals.css",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\globals.css",
-              "RelativeDocumentMoniker": "src\\globals.css",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\globals.css",
-              "RelativeToolTip": "src\\globals.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-08-30T01:20:47.773Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "api.ts",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\lib\\api.ts",
-              "RelativeDocumentMoniker": "src\\lib\\api.ts",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\lib\\api.ts",
-              "RelativeToolTip": "src\\lib\\api.ts",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAgwAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T01:18:31.546Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "analysis-result-modal.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\analysis-result-modal.tsx",
-              "RelativeDocumentMoniker": "src\\components\\analysis-result-modal.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\analysis-result-modal.tsx",
-              "RelativeToolTip": "src\\components\\analysis-result-modal.tsx",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwCcAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T01:18:25.504Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "card.tsx",
-              "DocumentMoniker": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\card.tsx",
-              "RelativeDocumentMoniker": "src\\components\\ui\\card.tsx",
-              "ToolTip": "E:\\ESG-Smart-Assistance-Platform\\src\\components\\ui\\card.tsx",
-              "RelativeToolTip": "src\\components\\ui\\card.tsx",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-08-30T01:14:11.111Z"
             }
           ]
         }

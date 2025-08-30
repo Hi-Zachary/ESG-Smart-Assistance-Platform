@@ -14,7 +14,7 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { 
-  History as HistoryIcon,
+  History as HistoryIcon, 
   Search, 
   Filter,
   Download,
@@ -209,12 +209,9 @@ export default function History() {
       <div className="p-6 space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <HistoryIcon className="h-8 w-8 text-blue-600" />
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900">历史记录</h1>
-            <p className="text-gray-600 mt-1">查看和管理所有ESG分析历史记录</p>
-          </div>
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">历史记录</h1>
+          <p className="text-gray-600 mt-1">查看和管理所有ESG分析历史记录</p>
         </div>
         <div className="flex space-x-2">
           {selectedItems.length > 0 && (
