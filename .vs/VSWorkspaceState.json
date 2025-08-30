@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\server",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\ui",
+    "\\src\\lib",
+    "\\src\\pages"
+  ],
+  "SelectedNode": "\\src\\components\\sidebar.tsx",
+  "PreviewInSolutionExplorer": false
+}

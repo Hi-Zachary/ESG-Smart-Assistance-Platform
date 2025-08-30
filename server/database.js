@@ -126,7 +126,7 @@ const db = {
   async getUserByEmail(email) {
     const result = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
     return result.rows[0];
-  },
+    },
 
   // ESG分析结果相关操作
   async saveAnalysisResult(data) {

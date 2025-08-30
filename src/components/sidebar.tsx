@@ -12,7 +12,6 @@ import {
   Home,
   Settings,
   HelpCircle,
-  Bell
 } from 'lucide-react'
 
 interface SidebarProps {
@@ -52,6 +51,16 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
       name: '历史记录',
       path: '/history',
       icon: <History className="h-5 w-5" />
+    },
+    {
+      name: '设置',
+      path: '/settings',
+      icon: <Settings className="h-5 w-5" />
+    },
+    {
+      name: '帮助',
+      path: '/help',
+      icon: <HelpCircle className="h-5 w-5" />
     }
   ]
 
@@ -62,25 +71,21 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
     )}>
       {/* 顶部标题和折叠按钮 */}
       <div className="flex items-center justify-between h-16 px-4 border-b border-gray-200">
-        {open ? (
+        {open &&
           <div className="flex items-center">
             <div className="flex items-center justify-center w-8 h-8 rounded-md bg-blue-600 text-white">
               <TrendingUp className="h-5 w-5" />
             </div>
             <h1 className="ml-2 text-xl font-bold text-gray-900">ESG分析</h1>
           </div>
-        ) : (
-          <div className="flex items-center justify-center w-8 h-8 rounded-md bg-blue-600 text-white mx-auto">
-            <TrendingUp className="h-5 w-5" />
-          </div>
-        )}
+        }
         <Button
           variant="ghost"
           size="icon"
           onClick={() => setOpen(!open)}
           className="text-gray-500 hover:text-gray-900"
         >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+         {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </Button>
       </div>
 
@@ -116,28 +121,12 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
                 <p className="text-xs text-gray-500">分析师@esg.com</p>
               </div>
             </div>
-            <div className="flex space-x-2">
-              <Button variant="outline" size="sm" className="flex-1">
-                <Settings className="h-4 w-4 mr-1" />
-                设置
-              </Button>
-              <Button variant="outline" size="sm" className="flex-1">
-                <HelpCircle className="h-4 w-4 mr-1" />
-                帮助
-              </Button>
-            </div>
           </div>
         ) : (
           <div className="flex flex-col items-center space-y-4">
-            <Button variant="ghost" size="icon" className="text-gray-500 hover:text-gray-900">
-              <Settings className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="text-gray-500 hover:text-gray-900">
-              <HelpCircle className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="text-gray-500 hover:text-gray-900">
-              <Bell className="h-5 w-5" />
-            </Button>
+            <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
+              <span className="text-sm font-medium text-gray-700">用户</span>
+            </div>
           </div>
         )}
       </div>

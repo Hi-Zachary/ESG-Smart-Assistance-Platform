@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
@@ -16,7 +16,6 @@ import {
   Building,
   Download
 } from 'lucide-react'
-import { storage } from '@/lib/storage'
 import { exportUtils } from '@/lib/export'
 import { notify } from '@/lib/notifications'
 
@@ -71,10 +70,11 @@ export default function TextAnalysis() {
       setAnalysisResult(processedResult)
       notify.success('分析完成', 'ESG文本分析已成功完成')
     } catch (error) {
-      console.error('分析错误:', error)
-      notify.error('分析失败', `分析过程中出现错误: ${error.message}`)
+      console.error('分析错误:', error);
+      const errorMessage = typeof error === 'string' ? error : error.message || '未知错误';
+      notify.error('分析失败', `分析过程中出现错误: ${errorMessage}`);
     } finally {
-      setIsAnalyzing(false)
+      setIsAnalyzing(false);
     }
   }
 
@@ -128,11 +128,13 @@ export default function TextAnalysis() {
   return (
     <div className="p-6 space-y-6">
       {/* 页面标题 */}
-      <div>
-        <h1 className="text-3xl font-bold text-gray-900">ESG文本分析</h1>
-        <p className="text-gray-600 mt-1">上传或粘贴企业报告文本，自动提取ESG关键信息</p>
+      <div className="flex items-center space-x-3">
+        <FileText className="h-8 w-8 text-blue-600" />
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">ESG文本分析</h1>
+          <p className="text-gray-600 mt-1">上传或粘贴企业报告文本，自动提取ESG关键信息</p>
+        </div>
       </div>
-
       {/* 输入区域 */}
       <Card>
         <CardHeader>

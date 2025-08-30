@@ -7,6 +7,8 @@ import TextAnalysis from '@/pages/text-analysis'
 import ComplianceCheck from '@/pages/compliance-check'
 import DataVisualization from '@/pages/data-visualization'
 import History from '@/pages/history'
+import SettingsPage from '@/pages/settings'
+import HelpPage from '@/pages/help'
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true)
@@ -23,6 +25,8 @@ function App() {
               <Route path="/compliance" element={<ComplianceCheck />} />
               <Route path="/visualization" element={<DataVisualization />} />
               <Route path="/history" element={<History />} />
+              <Route path="/settings" element={<SettingsPage />} />
+              <Route path="/help" element={<HelpPage /> } />
             </Routes>
           </main>
         </div>
