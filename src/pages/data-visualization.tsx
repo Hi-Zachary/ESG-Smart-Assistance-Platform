@@ -318,9 +318,12 @@ export default function DataVisualization() {
     <div className="p-6 space-y-6">
       {/* 页面标题 */}
       <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-3xl font-bold text-gray-900">ESG数据可视化</h1>
-          <p className="text-gray-600 mt-1">直观展示ESG指标和趋势</p>
+        <div className="flex items-center space-x-3">
+            <BarChart3 className="h-8 w-8 text-blue-600" />
+            <div>
+                <h1 className="text-3xl font-bold text-gray-900">ESG数据可视化</h1>
+                <p className="text-gray-600 mt-1">直观展示ESG指标和趋势</p>
+            </div>
         </div>
         <div className="flex space-x-2">
           <Button variant="outline" onClick={handleExportData}>

@@ -105,18 +105,6 @@ export default function HelpPage() {
                 </div>
             </div>
 
-            {/* 搜索栏 */}
-            <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-                <Input
-                    type="text"
-                    placeholder="搜索帮助内容..."
-                    className="pl-10"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                />
-            </div>
-
             {/* 主要内容区域 */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="lg:col-span-2 space-y-6">
