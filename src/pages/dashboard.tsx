@@ -42,8 +42,20 @@ export default function Dashboard() {
 
   const loadDashboardData = async () => {
     try {
-      // 从API获取统计数据
-      const stats = await getStats()
+      // 从API获取按用户过滤的统计数据
+      const token = localStorage.getItem('token');
+      const response = await fetch('/api/dashboard/stats', {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      if (!response.ok) {
+        throw new Error('获取统计数据失败');
+      }
+      
+      const stats = await response.json();
       
       // 尝试获取最近的分析记录
       let recentAnalysis = []
@@ -65,9 +77,14 @@ export default function Dashboard() {
       // 获取真实的风险预警数据
       let riskAlertsData = []
       try {
-        const response = await fetch('/api/risk-alerts')
-        if (response.ok) {
-          riskAlertsData = await response.json()
+        const riskResponse = await fetch('/api/risk-alerts', {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          }
+        })
+        if (riskResponse.ok) {
+          riskAlertsData = await riskResponse.json()
         }
       } catch (riskError) {
         console.warn('获取风险预警数据失败:', riskError)

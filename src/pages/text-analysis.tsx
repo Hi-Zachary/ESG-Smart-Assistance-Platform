@@ -18,8 +18,10 @@ import {
 } from 'lucide-react'
 import { exportUtils } from '@/lib/export'
 import { notify } from '@/lib/notifications'
+import { useAuth } from '@/lib/auth-context'
 
 export default function TextAnalysis() {
+  const { token } = useAuth()
   const [inputText, setInputText] = useState('')
   const [isAnalyzing, setIsAnalyzing] = useState(false)
   const [analysisResult, setAnalysisResult] = useState<any>(null)
@@ -38,6 +40,7 @@ export default function TextAnalysis() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
           text: inputText.trim()
@@ -70,9 +73,9 @@ export default function TextAnalysis() {
       setAnalysisResult(processedResult)
       notify.success('分析完成', 'ESG文本分析已成功完成')
     } catch (error) {
-      console.error('分析错误:', error);
-      const errorMessage = typeof error === 'string' ? error : error.message || '未知错误';
-      notify.error('分析失败', `分析过程中出现错误: ${errorMessage}`);
+      console.error('分析错误:', error)
+      const errorMessage = error instanceof Error ? error.message : '未知错误'
+      notify.error('分析失败', `分析过程中出现错误: ${errorMessage}`)
     } finally {
       setIsAnalyzing(false);
     }

@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { cn } from '@/lib/utils'
+import { useAuth } from '@/lib/auth-context'
 import { Button } from '@/components/ui/button'
 import { 
   BarChart3, 
@@ -21,9 +22,16 @@ interface SidebarProps {
 
 export default function Sidebar({ open, setOpen }: SidebarProps) {
   const location = useLocation()
+  const { user, logout } = useAuth()
   
   const isActive = (path: string) => {
     return location.pathname === path
+  }
+  
+  // 处理登出
+  const handleLogout = () => {
+    logout();
+    // 登出后会自动重定向到登录页面，因为受保护路由会检测到未登录状态
   }
 
   const navItems = [
@@ -96,7 +104,8 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
             key={item.path}
             to={item.path}
             className={cn(
-              "flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors",
+              "flex items-center rounded-md text-sm font-medium transition-colors",
+              open ? "px-3 py-2" : "px-2 py-2 justify-center",
               isActive(item.path)
                 ? "bg-blue-50 text-blue-700"
                 : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
@@ -114,12 +123,30 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
           <div className="space-y-4">
             <div className="flex items-center">
               <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-                <span className="text-sm font-medium text-gray-700">用户</span>
+                <span className="text-sm font-medium text-gray-700">
+                  {user?.username?.[0]?.toUpperCase() || '用户'}
+                </span>
               </div>
               <div className="ml-3">
-                <p className="text-sm font-medium text-gray-900">分析师</p>
-                <p className="text-xs text-gray-500">分析师@esg.com</p>
+                <p className="text-sm font-medium text-gray-900">{user?.username || '未登录'}</p>
+                <p className="text-xs text-gray-500">{user?.email || ''}</p>
               </div>
+            </div>
+          </div>
+            <div className="flex space-x-2">
+              <Button variant="outline" size="sm" className="flex-1">
+                <Settings className="h-4 w-4 mr-1" />
+                设置
+              </Button>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="flex-1 text-red-500 hover:bg-red-50"
+                onClick={handleLogout}
+              >
+                <LogOut className="h-4 w-4 mr-1" />
+                登出
+              </Button>
             </div>
           </div>
         ) : (
@@ -127,6 +154,17 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
             <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
               <span className="text-sm font-medium text-gray-700">用户</span>
             </div>
+            <Button variant="ghost" size="icon" className="text-gray-500 hover:text-gray-900">
+              <Settings className="h-5 w-5" />
+            </Button>
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="text-red-500 hover:text-red-700"
+              onClick={handleLogout}
+            >
+              <LogOut className="h-5 w-5" />
+            </Button>
           </div>
         )}
       </div>

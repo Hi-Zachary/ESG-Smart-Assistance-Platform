@@ -42,7 +42,13 @@ export default function ComplianceCheck() {
   const loadAnalysisHistory = async () => {
     try {
       // 从后端API获取分析历史，确保数据一致性
-      const response = await fetch('http://localhost:3001/api/history?limit=100')
+      const token = localStorage.getItem('token');
+      const response = await fetch('http://localhost:3001/api/history?limit=100', {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      });
       if (response.ok) {
         const data = await response.json()
         setAnalysisHistory(data.results)
