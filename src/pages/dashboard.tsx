@@ -374,9 +374,6 @@ export default function Dashboard() {
                         }`}>
                           {item.score}
                         </span>
-                        <Button variant="ghost" size="icon" className="ml-2">
-                          <ArrowRight className="h-4 w-4" />
-                        </Button>
                       </div>
                     </div>
                   ))}

@@ -17,7 +17,6 @@ import {
     CardDescription
 } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
 
 export default function HelpPage() {
     const [activeCategory, setActiveCategory] = useState<string | null>(null)
@@ -46,8 +45,8 @@ export default function HelpPage() {
                     answer: '在仪表板页面点击开始新分析/直接点击文本分析均可以跳转到分析页面，输入/导入文本后点击开始分析即可。'
                 },
                 {
-                    question: '如何导出数据分析报告？',
-                    answer: '在数据管理页面，选择需要导出的数据集，点击"导出"按钮并选择格式(PDF/Excel/CSV)。'
+                    question: '如何导出所有历史数据？',
+                    answer: '在设置页面底端，选择导出模式并保存后即可点击"导出所有分析数据"按钮即可一键导出所有历史数据。'
                 },
                 {
                     question: '如何进行合规性检测？',
@@ -55,7 +54,7 @@ export default function HelpPage() {
                 },
                 {
                     question: '如何新增合规性检测的规则？',
-                    answer: '在页面最下方点击导入新规则后传入含有规则信息的JSON文件即可。'
+                    answer: '在页面最下方点击导入新规则后传入含有规则信息的JSON文件即可，如果对文件格式不了解可以下载已有的规则进行查看。'
                 },
             ]
         }
@@ -68,14 +67,14 @@ export default function HelpPage() {
             title: '电子邮件',
             description: '24小时内回复',
             icon: <Mail className="h-6 w-6 text-blue-600" />,
-            action: 'email@example.com'
+            action: '3598326404@qq.com'
         },
         {
             id: 'phone',
             title: '电话支持',
             description: '紧急问题优先处理',
             icon: <Phone className="h-6 w-6 text-purple-600" />,
-            action: 'tele-number'
+            action: '13733866926'
         }
     ]
 
@@ -192,47 +191,6 @@ export default function HelpPage() {
                                     </Card>
                                 ))}
                             </div>
-                        </CardContent>
-                    </Card>
-
-                    {/* 提交问题表单 */}
-                    <Card>
-                        <CardHeader>
-                            <CardTitle className="flex items-center">
-                                <MessageSquare className="h-5 w-5 mr-2 text-purple-600" />
-                                未找到您的问题？
-                            </CardTitle>
-                            <CardDescription>提交您的问题，我们的团队会尽快回复</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <form className="space-y-4">
-                                <div>
-                                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                                        问题主题
-                                    </label>
-                                    <Input id="subject" placeholder="简要描述您的问题" />
-                                </div>
-                                <div>
-                                    <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
-                                        详细描述
-                                    </label>
-                                    <textarea
-                                        id="description"
-                                        rows={4}
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                                        placeholder="请尽可能详细地描述您遇到的问题..."
-                                    ></textarea>
-                                </div>
-                                <div>
-                                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                                        联系邮箱
-                                    </label>
-                                    <Input id="email" type="email" placeholder="用于接收回复" />
-                                </div>
-                                <div className="flex justify-end">
-                                    <Button type="submit">提交问题</Button>
-                                </div>
-                            </form>
                         </CardContent>
                     </Card>
                 </div>

@@ -2,6 +2,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { cn } from '@/lib/utils'
 import { useAuth } from '@/lib/auth-context'
 import { Button } from '@/components/ui/button'
+import { useState, useEffect } from "react"
+import { defaultIcon } from '@/defaultIcon/default'
 import { 
   BarChart3, 
   FileText, 
@@ -26,6 +28,7 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
   const location = useLocation()
   const { user, logout } = useAuth()
   const navigate = useNavigate()
+  const [avatar, setAvatar] = useState(null)
   
   const isActive = (path: string) => {
     return location.pathname === path
@@ -74,6 +77,11 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
       icon: <HelpCircle className="h-5 w-5" />
     }
   ]
+
+  useEffect(() => {
+    const local = JSON.parse(localStorage.getItem('userInfo') || 'null')
+    setAvatar(local?.user?.avatar)
+  })
 
   return (
     <div className={cn(
@@ -127,7 +135,7 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
             <div className="flex items-center">
               <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
                 <span className="text-sm font-medium text-gray-700">
-                  {user?.username?.[0]?.toUpperCase() || '用户'}
+                  <img src={(avatar === '' || avatar == null) ? defaultIcon : avatar} className="h-8 w-8 rounded-full" />
                 </span>
               </div>
               <div className="ml-3">

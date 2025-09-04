@@ -3,7 +3,7 @@ export const storage = {
   // 清空本地存储
   clearAll: () => {
     localStorage.removeItem('esg-analysis-results')
-    localStorage.removeItem('esg-settings')
+    localStorage.removeItem('userInfo')
   },
 
   // 获取所有分析结果 - 仅作为备用
@@ -47,14 +47,12 @@ export const storage = {
       const settings = localStorage.getItem('esg-settings')
       return settings ? JSON.parse(settings) : {
         theme: 'light',
-        language: 'zh-CN',
         autoSave: true,
         notifications: true
       }
     } catch {
       return {
         theme: 'light',
-        language: 'zh-CN',
         autoSave: true,
         notifications: true
       }

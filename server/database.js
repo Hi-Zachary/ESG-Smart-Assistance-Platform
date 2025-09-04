@@ -1,4 +1,4 @@
-const { Pool } = require('pg');
+import { Pool } from 'pg';
 
 // 数据库连接配置
 const pool = new Pool({
@@ -108,7 +108,7 @@ const initDatabase = async () => {
 };
 
 // 数据库操作函数
-const db = {
+export const db = {
   // 用户相关操作
   async createUser(username, email, passwordHash, role = 'user') {
     const result = await pool.query(
@@ -130,6 +130,14 @@ const db = {
 
   async getUserByUsernameOrEmail(username, email) {
     const result = await pool.query('SELECT * FROM users WHERE username = $1 OR email = $2', [username, email]);
+    return result.rows[0];
+  },
+
+  async updateUserByUsername(username, newname, newemail) {
+    const result = await pool.query(
+      'UPDATE users SET username = COALESCE($2, username), email = COALESCE($3, email), updated_at = CURRENT_TIMESTAMP WHERE username = $1 RETURNING *',
+      [username, newname, newemail]
+    );
     return result.rows[0];
   },
 
@@ -537,4 +545,4 @@ const db = {
   }
 };
 
-module.exports = { pool, initDatabase, db };
+export { pool, initDatabase };

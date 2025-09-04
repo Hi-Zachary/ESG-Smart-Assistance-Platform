@@ -5,6 +5,8 @@ interface User {
   id: string;
   username: string;
   email: string;
+  avatar: string;
+  exportFormat: string;
 }
 
 // 定义认证上下文类型
@@ -15,6 +17,7 @@ interface AuthContextType {
   isLoading: boolean;
   login: (user: User, token: string) => void;
   logout: () => void;
+  updateUser: (updateUser: Partial<User>) => void;
 }
 
 // 创建认证上下文
@@ -67,6 +70,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     localStorage.removeItem('token');
   };
 
+  // 更新用户信息
+  const updateUser = (updatedUser: Partial<User>) => {
+    if (!user) return; // 确保用户已登录
+
+    // 合并新旧用户数据
+    const newUser = { ...user, ...updatedUser };
+    setUser(newUser);
+
+    // 更新本地存储
+    localStorage.setItem('user', JSON.stringify(newUser));
+  };
+
   // 提供认证上下文
   const value = {
     user,
@@ -74,7 +89,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     isAuthenticated: !!user && !!token,
     isLoading,
     login,
-    logout
+    logout,
+    updateUser
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
