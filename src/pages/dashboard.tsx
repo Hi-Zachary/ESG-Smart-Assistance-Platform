@@ -14,6 +14,7 @@ import {
   ArrowUpRight,
   ArrowDownRight,
   Download,
+  Home,
   History as HistoryIcon
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -140,9 +141,12 @@ export default function Dashboard() {
     <div className="p-6 space-y-6">
       {/* 页面标题 */}
       <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-3xl font-bold text-gray-900">ESG智能分析仪表板</h1>
-          <p className="text-gray-600 mt-1">欢迎回来，查看最新的ESG分析数据和见解</p>
+        <div className="flex items-center space-x-3">
+            <Home className="h-8 w-8 text-blue-600" />
+            <div>
+                <h1 className="text-3xl font-bold text-gray-900">ESG智能分析仪表板</h1>
+                <p className="text-gray-600 mt-1">欢迎回来，查看最新的ESG分析数据和见解</p>
+            </div>
         </div>
         <div className="flex space-x-2">
           <Button variant="outline" onClick={handleExportReport}>
@@ -370,9 +374,6 @@ export default function Dashboard() {
                         }`}>
                           {item.score}
                         </span>
-                        <Button variant="ghost" size="icon" className="ml-2">
-                          <ArrowRight className="h-4 w-4" />
-                        </Button>
                       </div>
                     </div>
                   ))}

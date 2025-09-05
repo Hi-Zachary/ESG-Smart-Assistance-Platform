@@ -1,7 +1,9 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { cn } from '@/lib/utils'
 import { useAuth } from '@/lib/auth-context'
 import { Button } from '@/components/ui/button'
+import { useState, useEffect } from "react"
+import { defaultIcon } from '@/defaultIcon/default'
 import { 
   BarChart3, 
   FileText, 
@@ -25,6 +27,8 @@ interface SidebarProps {
 export default function Sidebar({ open, setOpen }: SidebarProps) {
   const location = useLocation()
   const { user, logout } = useAuth()
+  const navigate = useNavigate()
+  const [avatar, setAvatar] = useState(null)
   
   const isActive = (path: string) => {
     return location.pathname === path
@@ -35,6 +39,11 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
     logout();
     // 登出后会自动重定向到登录页面，因为受保护路由会检测到未登录状态
   }
+
+    const handleSettings = () => {
+        navigate('/settings');
+        return;
+    }
 
   const navItems = [
     {
@@ -61,8 +70,18 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
       name: '历史记录',
       path: '/history',
       icon: <History className="h-5 w-5" />
+    },
+    {
+      name: '帮助',
+      path: '/help',
+      icon: <HelpCircle className="h-5 w-5" />
     }
   ]
+
+  useEffect(() => {
+    const local = JSON.parse(localStorage.getItem('userInfo') || 'null')
+    setAvatar(local?.user?.avatar)
+  })
 
   return (
     <div className={cn(
@@ -116,7 +135,7 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
             <div className="flex items-center">
               <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
                 <span className="text-sm font-medium text-gray-700">
-                  {user?.username?.[0]?.toUpperCase() || '用户'}
+                  <img src={(avatar === '' || avatar == null) ? defaultIcon : avatar} className="h-8 w-8 rounded-full" />
                 </span>
               </div>
               <div className="ml-3">
@@ -125,7 +144,7 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
               </div>
             </div>
             <div className="flex space-x-2">
-              <Button variant="outline" size="sm" className="flex-1">
+                <Button variant="outline" size="sm" className="flex-1" onClick={ handleSettings }>
                 <Settings className="h-4 w-4 mr-1" />
                 设置
               </Button>

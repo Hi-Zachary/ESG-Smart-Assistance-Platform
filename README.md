@@ -230,7 +230,8 @@ CREATE TABLE users (
 │   │   ├── register.tsx   # 注册页面
 │   │   └── ...            # 其他功能页面
 │   ├── main.tsx           # 前端入口文件
-│   └── App.tsx            # 应用根组件（含路由配置）
+│   ├── App.tsx            # 应用根组件（含路由配置）
+│   └── defaultIcon        # 默认用户头像资源
 │
 ├── public/                # 静态资源
 ├── .gitignore             # Git忽略配置
